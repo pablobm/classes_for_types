@@ -1,4 +1,4 @@
-h1. <code>classes_for_types</code>
+h1. classes_for_types
 
 h2. Introduction
 
