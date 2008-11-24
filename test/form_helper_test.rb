@@ -34,24 +34,25 @@ class FormHelperTest < ActionView::TestCase
   tests ActionView::Helpers::FormHelper
 
   def setup
-    @account = Account.new
-    def @account.errors()
+    @post = Post.new
+    @comment = Comment.new
+    def @post.errors()
       Class.new{
-        def on(field); "can't be empty" if field == "holder_name"; end
+        def on(field); "can't be empty" if field == "author_name"; end
         def empty?() false end
         def count() 1 end
-        def full_messages() [ "Holder name can't be empty" ] end
+        def full_messages() [ "Author name can't be empty" ] end
       }.new
     end
-    def @account.id; 123; end
-    def @account.id_before_type_cast; 123; end
-    def @account.to_param; '123'; end
+    def @post.id; 123; end
+    def @post.id_before_type_cast; 123; end
+    def @post.to_param; '123'; end
 
-    @account.holder_name = ""
-    @account.number      = "12345678"
-    @account.sort_code1  = "12"
-    @account.sort_code2  = "34"
-    @account.sort_code3  = "56"
+    @post.title       = "Hello World"
+    @post.author_name = ""
+    @post.body        = "Back to the hill and over it again!"
+    @post.secret      = 1
+    @post.written_on  = Date.new(2004, 6, 15)
 
     @controller = Class.new do
       attr_reader :url_for_options
