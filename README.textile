@@ -1,5 +1,9 @@
 h1. classes_for_types
 
+h2. NOTE: this is deprecated software
+
+I wrote this back in 2008, for Rails 1.2 (if I recall correctly). Do not expect it to work nowadays.
+
 h2. Introduction
 
 _classes_for_types_ is a plugin for Ruby on Rails.
